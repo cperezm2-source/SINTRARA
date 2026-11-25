@@ -15,41 +15,56 @@
    COLOUR deep green #1b7a33 / #0f5a24 lead; logo keeps red and orange; yellow, light green and sky as small accents
    TYPE Nunito for UI and headings, Source Serif 4 for legal documents
    LAYOUT masthead, sticky menu, two columns (entries 1fr + sidebar 300px); one column under 860px */
-:root{color-scheme:light dark;--bg:light-dark(#eef4ee,#0c140e);--paper:light-dark(#ffffff,#132018);--ink:light-dark(#122016,#eef6ef);--soft:light-dark(#4b5e4f,#a9bfad);--line:light-dark(#d6e9d6,#2a3d2c);--g1:#1b7a33;--g2:#0f5a24;--gl:#5cb531;--yel:#ffc20e;--sky:#4fc3ec;--red:#e3141b;--link:light-dark(#17692b,#7fd88d);--mk:light-dark(#f3faf2,#1a2a1e)}
-:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+:root{color-scheme:light;--bg:#ffffff;--paper:#ffffff;--ink:#122016;--soft:#4b5e4f;--line:#d9ecd9;--g1:#1b7a33;--g2:#0f5a24;--gl:#5cb531;--yel:#ffc20e;--sky:#4fc3ec;--red:#e3141b;--link:#17692b;--mk:#eff8ee;--sh:0 10px 30px rgba(15,90,36,.14)}
 *{box-sizing:border-box;min-width:0}
 html{scroll-padding-top:70px}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Nunito,system-ui,sans-serif;overflow-x:clip}
 a{color:var(--link)}
 .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:8px;z-index:9}
-.mast{background:var(--g1);color:#fff;padding:28px max(5vw,16px) 22px}
-.mast .in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.mast{position:relative;overflow:hidden;background:linear-gradient(120deg,var(--g2),var(--g1) 55%,#25913f);color:#fff;padding:34px max(5vw,16px) 30px}
+.mast::before{content:"";position:absolute;inset:-50%;background:repeating-linear-gradient(115deg,rgba(255,255,255,.06) 0 22px,transparent 22px 70px);animation:drift 28s linear infinite}
+.mast::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--red),#f7931e,var(--yel),var(--gl),var(--sky),var(--red));background-size:200% 100%;animation:slide 8s linear infinite}
+@keyframes drift{to{transform:translateX(140px)}}@keyframes slide{to{background-position:200% 0}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@keyframes pop{0%{transform:scale(.85) rotate(-4deg);opacity:0}70%{transform:scale(1.04) rotate(1deg)}100%{transform:none;opacity:1}}
+.mast .in{position:relative}.mast .logo{animation:pop .8s cubic-bezier(.2,.8,.3,1.2) both}.mast h1,.mast p{animation:rise .7s .2s both}.mast p{animation-delay:.35s}
+.mast .in{z-index:1;max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
 .mast .logo{width:min(100%,330px);height:auto;display:block}
 .mast h1{margin:0;font-size:clamp(34px,5vw,52px);line-height:1;font-weight:900;letter-spacing:-.02em}
 .mast p{margin:6px 0 0;font-size:18px;font-weight:700;opacity:.95}
 nav.menu{position:sticky;top:0;z-index:5;background:var(--g2)}
 nav.menu .in{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;padding:0 max(5vw,16px) 0 calc(max(5vw,16px) - 12px)}
 nav.menu a,nav.menu summary{color:#fff;text-decoration:none;font-weight:700;padding:13px 12px;display:block;cursor:pointer;min-height:44px}
-nav.menu a:hover,nav.menu summary:hover,nav.menu a[aria-current]{background:rgba(255,255,255,.14)}
+nav.menu{box-shadow:0 4px 14px rgba(0,0,0,.12)}nav.menu .in>a,nav.menu summary{position:relative;transition:background .2s}nav.menu .in>a::after{content:"";position:absolute;left:12px;right:12px;bottom:6px;height:3px;border-radius:2px;background:var(--yel);transform:scaleX(0);transition:transform .25s}nav.menu .in>a:hover::after,nav.menu .in>a[aria-current]::after{transform:scaleX(1)}nav.menu a:hover,nav.menu summary:hover{background:rgba(255,255,255,.12)}nav.menu .drop{animation:rise .2s both}nav.menu .drop a{transition:padding .2s,background .2s}nav.menu .drop a:hover{padding-left:20px;background:rgba(255,255,255,.12)}
 nav.menu details{position:relative}nav.menu summary{list-style:none}nav.menu summary::after{content:" ▾"}
 nav.menu .drop{position:absolute;left:0;top:100%;background:var(--g2);min-width:280px;box-shadow:0 8px 20px rgba(0,0,0,.25);border-radius:0 0 8px 8px;overflow:hidden}
 nav.menu .drop a{font-weight:600;border-top:1px solid rgba(255,255,255,.12)}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--yel);outline-offset:2px}
 .wrap{max-width:1180px;margin:0 auto;padding:28px max(5vw,16px);display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
 .label{font-size:14px;font-weight:800;color:var(--soft);margin:0 0 12px;letter-spacing:.02em}
-.post{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--g1);border-radius:8px;padding:24px 28px;margin-bottom:24px}
+.post{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--g1);border-radius:12px;padding:24px 28px;margin-bottom:24px;box-shadow:0 2px 6px rgba(15,90,36,.06);transition:transform .25s,box-shadow .25s}
+#inicio .post:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}.reveal.in{opacity:1;transform:none}
+.view:not([hidden]){animation:rise .45s both}
+.hero{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 26px}.stat{background:var(--g1);color:#fff;border-radius:12px;padding:16px 14px;text-align:center;box-shadow:var(--sh);transition:transform .25s}.stat:nth-child(2){background:var(--g2)}.stat:nth-child(3){background:#25913f}.stat:nth-child(4){background:var(--g2)}.stat:hover{transform:translateY(-4px) scale(1.02)}.stat b{display:block;font-size:clamp(26px,3.4vw,36px);font-weight:900;line-height:1.1}.stat span{font-size:13.5px;font-weight:700;opacity:.92}
+.ptitle a{background:linear-gradient(var(--yel),var(--yel)) 0 100%/0 3px no-repeat;transition:background-size .3s}.ptitle a:hover{background-size:100% 3px}
+.share button{transition:background .2s,color .2s,transform .15s}.share button:hover{background:var(--g1);color:#fff}.share button:active{transform:scale(.95)}
+.progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--yel);z-index:9}
+.totop{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;border:0;background:var(--g1);color:#fff;font-size:22px;font-weight:900;cursor:pointer;box-shadow:var(--sh);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s,transform .3s,background .2s}.totop.on{opacity:1;transform:none;pointer-events:auto}.totop:hover{background:var(--g2)}
+aside .box{transition:box-shadow .25s}aside .box:hover{box-shadow:var(--sh)}aside li a{display:inline-block;transition:transform .2s,color .2s}aside li a:hover{transform:translateX(6px);color:var(--g2)}
+.profile svg{transition:transform .6s}.profile:hover svg{transform:rotate(360deg)}
+.doc tbody tr{transition:background .2s}.doc tbody tr:hover{background:var(--mk)}
 .post:nth-of-type(2){border-top-color:var(--yel)}.post:nth-of-type(3){border-top-color:var(--gl)}.post:nth-of-type(4){border-top-color:var(--sky)}
 .ptitle{margin:0 0 6px;font-size:clamp(22px,2.6vw,28px);line-height:1.2;font-weight:900}
 .ptitle a{color:var(--ink);text-decoration:none}.ptitle a:hover{color:var(--link)}
 .share{margin:0 0 14px}.share button{font:inherit;font-size:13px;font-weight:700;background:var(--mk);color:var(--link);border:1px solid var(--line);border-radius:6px;min-height:34px;padding:0 12px;cursor:pointer}
 .pbody p{margin:0 0 12px}.pbody ol{padding-left:1.4em}.pbody h3{font-size:20px;margin:20px 0 8px}
 .pfoot{border-top:1px solid var(--line);margin-top:14px;padding-top:10px;font-size:14px}.pfoot .date{color:var(--soft)}
-aside .box{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:20px}
-aside h2{font-size:15px;margin:0 0 10px;font-weight:900;color:var(--link)}
+aside .box{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--g1);border-radius:12px;padding:18px 20px;margin-bottom:20px}
+aside h2{font-size:15px;text-transform:uppercase;letter-spacing:.04em;margin:0 0 10px;font-weight:900;color:var(--link)}
 aside ul{margin:0;padding:0;list-style:none}aside li{padding:6px 0;border-top:1px solid var(--line)}aside li:first-child{border-top:0}
 aside a{text-decoration:none;font-weight:700}
 .profile{text-align:center}.profile svg{width:110px;height:110px}.profile p{margin:8px 0 0;font-weight:800}.profile small{color:var(--soft)}
-footer{background:var(--g2);color:#fff;text-align:center;padding:22px 16px;font-size:14px}
+footer{background:linear-gradient(120deg,var(--g2),var(--g1));color:#fff;text-align:center;padding:26px 16px;font-size:14px;margin-top:20px}
 .doc{font-family:"Source Serif 4",Georgia,serif;font-size:16.5px}
 .doc p{text-align:justify}.doc p.center,.doc h3.center{text-align:center}.doc p.right{text-align:right}.doc p.item{padding-left:2em;text-indent:-1.4em;text-align:left}.doc p.small{font-size:13.5px}
 .doc h3{font-family:Nunito,sans-serif;font-size:19px;margin:26px 0 10px}.doc h3.chapter{color:var(--link)}.doc h4{font-family:Nunito,sans-serif;font-size:16px;text-align:center;margin:18px 0 8px}
@@ -62,7 +77,8 @@ table.wide{min-width:760px}
 .sigs{margin:26px 0;font-family:Nunito,sans-serif}.sigrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:22px}.sigrow.one{grid-template-columns:minmax(0,300px);justify-content:center}.sigrow.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .sig{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:14px;text-align:center}.sig .line{width:80%;border-top:1.5px solid var(--ink);margin-top:40px;margin-bottom:4px}.sig b{font-size:13px}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:8px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none}.toast.on{opacity:1}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+@media(max-width:700px){.hero{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:860px){.wrap{grid-template-columns:minmax(0,1fr)}.post{padding:20px 18px}}
 @media(max-width:600px){.sigrow.three{grid-template-columns:minmax(0,1fr)}nav.menu .drop{position:static;box-shadow:none}.doc{font-size:15.5px}}
 </style>
@@ -81,13 +97,19 @@ table.wide{min-width:760px}
 <div class="wrap">
 <main id="contenido">
 <section class="view" id="inicio" data-view data-title="Inicio">
+<div class="hero" aria-label="SINTRARA en cifras">
+<div class="stat reveal"><b data-count="30">30</b><span>trabajadores fundadores</span></div>
+<div class="stat reveal"><b>4 nov</b><span>fundado en 2026</span></div>
+<div class="stat reveal"><b data-count="100">100</b><span>artículos en los Estatutos</span></div>
+<div class="stat reveal"><b data-count="12">12</b><span>directivos y tribunal</span></div>
+</div>
 <p class="label">Entradas</p>
-<article class="post" id="post-lema">
+<article class="post reveal" id="post-lema">
 <h2 class="ptitle"><a href="#post-lema">Unidos en cada tienda, firmes por el trabajo digno.</a></h2>
 <div class="share"><button type="button" data-link="post-lema">Copiar enlace</button></div>
 <div class="pbody"><p>SINTRARA es el Sindicato de Trabajadores de Ara, una organización sindical de empresa fundada el 4 de noviembre de 2026 en Cartagena de Indias por treinta (30) trabajadoras y trabajadores de JERÓNIMO MARTINS COLOMBIA S.A.S., operadora de las Tiendas Ara. Nacimos desde las cajas, las bodegas y los puntos de venta para defender nuestros derechos laborales, exigir condiciones de trabajo seguras y dignas, y construir estabilidad económica y social para todo el personal de tienda, logística y administración, con base en el artículo 39 de la Constitución Política y el Código Sustantivo del Trabajo.</p></div>
 <div class="pfoot"><a href="#post-lema" class="date">noviembre 25, 2026</a></div>
-</article><article class="post" id="post-valores">
+</article><article class="post reveal" id="post-valores">
 <h2 class="ptitle"><a href="#post-valores">Nuestros Valores</a></h2>
 <div class="share"><button type="button" data-link="post-valores">Copiar enlace</button></div>
 <div class="pbody"><p><strong>Unidad:</strong> somos una sola voz para todas las tiendas, sin importar el cargo o el turno.</p>
@@ -96,14 +118,14 @@ table.wide{min-width:760px}
 <p><strong>Democracia:</strong> nuestras directivas se eligen por voto secreto y con representación de las minorías.</p>
 <p><strong>Seguridad ante todo:</strong> exigimos el cumplimiento del Sistema de Gestión de la Seguridad y Salud en el Trabajo en cada establecimiento.</p></div>
 <div class="pfoot"><a href="#post-valores" class="date">noviembre 25, 2026</a></div>
-</article><article class="post" id="post-afiliacion">
+</article><article class="post reveal" id="post-afiliacion">
 <h2 class="ptitle"><a href="#post-afiliacion">¿Quieres formar parte de SINTRARA?</a></h2>
 <div class="share"><button type="button" data-link="post-afiliacion">Copiar enlace</button></div>
 <div class="pbody"><p>Si trabajas en una Tienda Ara, en una bodega o en el área administrativa de la empresa, este es tu sindicato. Para afiliarte solo necesitas:</p>
 <ol><li>Tener contrato de trabajo vigente con JERÓNIMO MARTINS COLOMBIA S.A.S.</li><li>Presentar por escrito tu solicitud de afiliación ante cualquier miembro de la Junta Directiva.</li><li>Aceptar los Estatutos y la cuota ordinaria del uno por ciento (1%) de tu salario básico, descontada por nómina.</li></ol>
 <p>La Junta Directiva responde cada solicitud en un plazo máximo de quince (15) días hábiles. La afiliación es libre y voluntaria, y la ley prohíbe cualquier represalia por ejercer el derecho de asociación sindical (artículo 354 del Código Sustantivo del Trabajo).</p></div>
 <div class="pfoot"><a href="#post-afiliacion" class="date">noviembre 25, 2026</a></div>
-</article><article class="post" id="post-canales">
+</article><article class="post reveal" id="post-canales">
 <h2 class="ptitle"><a href="#post-canales">Canales de Atención Inmediata</a></h2>
 <div class="share"><button type="button" data-link="post-canales">Copiar enlace</button></div>
 <div class="pbody"><p><strong>Junta Directiva:</strong> atención presencial con el Secretario General, Wilman Rodríguez M., y con el Secretario de Reclamos, Miguel Bustillo, en nuestra sede de la Cl. 36 #336, Cartagena de Indias.</p>
@@ -545,6 +567,8 @@ table.wide{min-width:760px}
 </aside>
 </div>
 <footer>SINTRARA · Sindicato de Trabajadores de Ara · Cl. 36 #336 · Cartagena de Indias, Bolívar<br>Organización sindical independiente; este no es un sitio de la empresa.</footer>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<button class="totop" id="totop" type="button" aria-label="Volver arriba">↑</button>
 <div class="toast" id="toast" role="status">Enlace copiado</div>
 <script>
 {
@@ -561,6 +585,14 @@ const show=()=>{
   if(target)target.scrollIntoView();else window.scrollTo(0,0);
 };
 addEventListener('hashchange',show);show();
+const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io='IntersectionObserver' in window&&!still?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);const b=e.target.querySelector('[data-count]');if(b)countUp(b)}}),{threshold:.15}):null;
+document.querySelectorAll('.reveal').forEach(el=>io?io.observe(el):el.classList.add('in'));
+function countUp(b){const n=+b.dataset.count,t0=performance.now();const f=t=>{const k=Math.min(1,(t-t0)/1200);b.textContent=Math.round(n*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+const bar=document.getElementById('progress'),top=document.getElementById('totop');
+const onScroll=()=>{const h=document.documentElement;const m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?h.scrollTop/m*100:0)+'%';top.classList.toggle('on',h.scrollTop>500)};
+addEventListener('scroll',onScroll,{passive:true});addEventListener('hashchange',onScroll);onScroll();
+top.addEventListener('click',()=>window.scrollTo({top:0,behavior:still?'auto':'smooth'}));
 const toast=document.getElementById('toast');
 document.addEventListener('click',async e=>{
   const b=e.target.closest('[data-link]');if(!b)return;
