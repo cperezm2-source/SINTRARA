@@ -47,16 +47,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .view:not([hidden]){animation:rise .45s both}
 .hero{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 26px}.stat{background:var(--g1);color:#fff;border-radius:12px;padding:16px 14px;text-align:center;box-shadow:var(--sh);transition:transform .25s}.stat:nth-child(2){background:var(--g2)}.stat:nth-child(3){background:#25913f}.stat:nth-child(4){background:var(--g2)}.stat:hover{transform:translateY(-4px) scale(1.02)}.stat b{display:block;font-size:clamp(26px,3.4vw,36px);font-weight:900;line-height:1.1}.stat span{font-size:13.5px;font-weight:700;opacity:.92}
 .ptitle a{background:linear-gradient(var(--yel),var(--yel)) 0 100%/0 3px no-repeat;transition:background-size .3s}.ptitle a:hover{background-size:100% 3px}
-.share button{transition:background .2s,color .2s,transform .15s}.share button:hover{background:var(--g1);color:#fff}.share button:active{transform:scale(.95)}
 .progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--yel);z-index:9}
 .totop{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;border:0;background:var(--g1);color:#fff;font-size:22px;font-weight:900;cursor:pointer;box-shadow:var(--sh);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s,transform .3s,background .2s}.totop.on{opacity:1;transform:none;pointer-events:auto}.totop:hover{background:var(--g2)}
 aside .box{transition:box-shadow .25s}aside .box:hover{box-shadow:var(--sh)}aside li a{display:inline-block;transition:transform .2s,color .2s}aside li a:hover{transform:translateX(6px);color:var(--g2)}
 .profile svg{transition:transform .6s}.profile:hover svg{transform:rotate(360deg)}
 .doc tbody tr{transition:background .2s}.doc tbody tr:hover{background:var(--mk)}
 .post:nth-of-type(2){border-top-color:var(--yel)}.post:nth-of-type(3){border-top-color:var(--gl)}.post:nth-of-type(4){border-top-color:var(--sky)}
-.ptitle{margin:0 0 6px;font-size:clamp(22px,2.6vw,28px);line-height:1.2;font-weight:900}
+.ptitle{margin:0 0 14px;font-size:clamp(22px,2.6vw,28px);line-height:1.2;font-weight:900}
 .ptitle a{color:var(--ink);text-decoration:none}.ptitle a:hover{color:var(--link)}
-.share{margin:0 0 14px}.share button{font:inherit;font-size:13px;font-weight:700;background:var(--mk);color:var(--link);border:1px solid var(--line);border-radius:6px;min-height:34px;padding:0 12px;cursor:pointer}
 .pbody p{margin:0 0 12px}.pbody ol{padding-left:1.4em}.pbody h3{font-size:20px;margin:20px 0 8px}
 .pfoot{border-top:1px solid var(--line);margin-top:14px;padding-top:10px;font-size:14px}.pfoot .date{color:var(--soft)}
 aside .box{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--g1);border-radius:12px;padding:18px 20px;margin-bottom:20px}
@@ -76,7 +74,6 @@ table.wide{min-width:760px}
 .fill{display:inline-block;overflow:hidden;white-space:nowrap;width:var(--w);max-width:100%;border-bottom:1px solid currentColor;height:1.1em;opacity:.7}
 .sigs{margin:26px 0;font-family:Nunito,sans-serif}.sigrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:22px}.sigrow.one{grid-template-columns:minmax(0,300px);justify-content:center}.sigrow.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .sig{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:14px;text-align:center}.sig .line{width:80%;border-top:1.5px solid var(--ink);margin-top:40px;margin-bottom:4px}.sig b{font-size:13px}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:8px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none}.toast.on{opacity:1}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
 @media(max-width:700px){.hero{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:860px){.wrap{grid-template-columns:minmax(0,1fr)}.post{padding:20px 18px}}
@@ -106,12 +103,12 @@ table.wide{min-width:760px}
 <p class="label">Entradas</p>
 <article class="post reveal" id="post-lema">
 <h2 class="ptitle"><a href="#post-lema">Unidos en cada tienda, firmes por el trabajo digno.</a></h2>
-<div class="share"><button type="button" data-link="post-lema">Copiar enlace</button></div>
+
 <div class="pbody"><p>SINTRARA es el Sindicato de Trabajadores de Ara, una organización sindical de empresa fundada el 4 de noviembre de 2026 en Cartagena de Indias por treinta (30) trabajadoras y trabajadores de JERÓNIMO MARTINS COLOMBIA S.A.S., operadora de las Tiendas Ara. Nacimos desde las cajas, las bodegas y los puntos de venta para defender nuestros derechos laborales, exigir condiciones de trabajo seguras y dignas, y construir estabilidad económica y social para todo el personal de tienda, logística y administración, con base en el artículo 39 de la Constitución Política y el Código Sustantivo del Trabajo.</p></div>
 <div class="pfoot"><a href="#post-lema" class="date">noviembre 25, 2026</a></div>
 </article><article class="post reveal" id="post-valores">
 <h2 class="ptitle"><a href="#post-valores">Nuestros Valores</a></h2>
-<div class="share"><button type="button" data-link="post-valores">Copiar enlace</button></div>
+
 <div class="pbody"><p><strong>Unidad:</strong> somos una sola voz para todas las tiendas, sin importar el cargo o el turno.</p>
 <p><strong>Transparencia:</strong> rendimos cuentas de cada decisión y de cada peso de las cuotas sindicales ante la Asamblea General.</p>
 <p><strong>Dignidad:</strong> defendemos salarios justos, jornadas legales y un trato respetuoso para cada trabajador.</p>
@@ -120,14 +117,14 @@ table.wide{min-width:760px}
 <div class="pfoot"><a href="#post-valores" class="date">noviembre 25, 2026</a></div>
 </article><article class="post reveal" id="post-afiliacion">
 <h2 class="ptitle"><a href="#post-afiliacion">¿Quieres formar parte de SINTRARA?</a></h2>
-<div class="share"><button type="button" data-link="post-afiliacion">Copiar enlace</button></div>
+
 <div class="pbody"><p>Si trabajas en una Tienda Ara, en una bodega o en el área administrativa de la empresa, este es tu sindicato. Para afiliarte solo necesitas:</p>
 <ol><li>Tener contrato de trabajo vigente con JERÓNIMO MARTINS COLOMBIA S.A.S.</li><li>Presentar por escrito tu solicitud de afiliación ante cualquier miembro de la Junta Directiva.</li><li>Aceptar los Estatutos y la cuota ordinaria del uno por ciento (1%) de tu salario básico, descontada por nómina.</li></ol>
 <p>La Junta Directiva responde cada solicitud en un plazo máximo de quince (15) días hábiles. La afiliación es libre y voluntaria, y la ley prohíbe cualquier represalia por ejercer el derecho de asociación sindical (artículo 354 del Código Sustantivo del Trabajo).</p></div>
 <div class="pfoot"><a href="#post-afiliacion" class="date">noviembre 25, 2026</a></div>
 </article><article class="post reveal" id="post-canales">
 <h2 class="ptitle"><a href="#post-canales">Canales de Atención Inmediata</a></h2>
-<div class="share"><button type="button" data-link="post-canales">Copiar enlace</button></div>
+
 <div class="pbody"><p><strong>Junta Directiva:</strong> atención presencial con el Secretario General, Wilman Rodríguez M., y con el Secretario de Reclamos, Miguel Bustillo, en nuestra sede de la Cl. 36 #336, Cartagena de Indias.</p>
 <p><strong>Comisión estatutaria de reclamos:</strong> Elsa Bayter y María Bayter reciben las quejas de los compañeros en cada turno.</p>
 <p><strong>Cobertura:</strong> todos los establecimientos de Tiendas Ara en Cartagena de Indias y en el territorio nacional donde la empresa tenga centros de trabajo.</p>
@@ -138,27 +135,27 @@ table.wide{min-width:760px}
 <section class="view" id="quienes-somos" data-view hidden data-title="¿Quiénes somos?">
 <article class="post page">
 <h2 class="ptitle">¿Quiénes somos?</h2>
-<div class="share"><button type="button" data-link="quienes-somos">Copiar enlace</button></div>
+
 <div class="pbody doc"><p>Somos el <strong>Sindicato de Trabajadores de Ara (SINTRARA)</strong>, una organización sindical de primer grado y de empresa que agrupa a las personas vinculadas por contrato de trabajo a JERÓNIMO MARTINS COLOMBIA S.A.S., operadora de las Tiendas Ara, cualquiera que sea su cargo, oficio o lugar de trabajo.</p>
 <p>Tenemos domicilio en la Cl. 36 #336 de Cartagena de Indias, departamento de Bolívar, y actuamos en todo el territorio nacional donde la empresa tenga establecimientos. Nuestra máxima autoridad es la Asamblea General de afiliados; nos dirige una Junta Directiva de siete (7) secretarios y dos (2) vocales, y contamos con un Tribunal Disciplinario independiente que garantiza el debido proceso.</p>
 <p>Nuestra Junta Directiva Provisional está encabezada por Wilman Rodríguez M., Secretario General, y la conforman María Marrugo, Nereidis Flórez, Miguel Bustillo, Yaneris Díaz, Natalia Rojas, Laura Vitola, Amaury Maza y Alejandra González.</p></div>
 </article></section><section class="view" id="historia" data-view hidden data-title="Nuestra Historia">
 <article class="post page">
 <h2 class="ptitle">Nuestra Historia</h2>
-<div class="share"><button type="button" data-link="historia">Copiar enlace</button></div>
+
 <div class="pbody doc"><p>SINTRARA nació de las conversaciones entre compañeros de turno en las Tiendas Ara de Cartagena: cajeras, auxiliares de punto de venta, operadores logísticos, jefas de tienda y personal de bodega que compartían las mismas preocupaciones sobre sus condiciones de trabajo.</p>
 <p>El 28 de octubre de 2026, un Comité Organizador integrado por Wilman Rodríguez M., María Marrugo y Nereidis Flórez convocó a todos los trabajadores a una asamblea. El miércoles 4 de noviembre de 2026, a las 6:00 p.m., treinta (30) trabajadores aprobaron por unanimidad la constitución del sindicato, discutieron y aprobaron sus Estatutos artículo por artículo, y eligieron por voto secreto la Junta Directiva Provisional y el Tribunal Disciplinario.</p>
 <p>Al día siguiente, el 5 de noviembre de 2026, la Junta Directiva comunicó la constitución al Inspector de Trabajo de la Dirección Territorial de Bolívar y solicitó la inscripción en el registro sindical, dentro del término de cinco (5) días hábiles que fija el artículo 365 del Código Sustantivo del Trabajo.</p></div>
 </article></section><section class="view" id="mision-vision" data-view hidden data-title="Misión y Visión">
 <article class="post page">
 <h2 class="ptitle">Misión y Visión</h2>
-<div class="share"><button type="button" data-link="mision-vision">Copiar enlace</button></div>
+
 <div class="pbody doc"><h3>Misión</h3><p>Representar y defender, de manera auténtica y democrática, los intereses económicos, sociales y profesionales de las trabajadoras y los trabajadores de las Tiendas Ara, mediante la negociación colectiva, la asesoría permanente, la vigilancia del cumplimiento de la ley laboral y de las normas de seguridad y salud en el trabajo, y la formación sindical de nuestros afiliados.</p>
 <h3>Visión</h3><p>Ser reconocidos en 2030 como la organización sindical de referencia del comercio minorista en Colombia: con presencia en todas las regiones donde opera Ara, una convención colectiva vigente que mejore las condiciones de trabajo, y una base afiliada informada, unida y participativa.</p></div>
 </article></section><section class="view" id="carta-ministerio" data-view hidden data-title="Carta dirigida al Ministerio de Trabajo">
 <article class="post page">
 <h2 class="ptitle">Carta dirigida al Ministerio de Trabajo</h2>
-<div class="share"><button type="button" data-link="carta-ministerio">Copiar enlace</button></div>
+
 <div class="pbody doc"><p class="right">Cartagena de Indias, 5 de noviembre de 2026</p>
 <p>Señor(a):</p>
 <p>INSPECTOR(A) DE TRABAJO Y SEGURIDAD SOCIAL</p>
@@ -176,7 +173,7 @@ table.wide{min-width:760px}
 </article></section><section class="view" id="convocatoria" data-view hidden data-title="Convocatoria a la Asamblea">
 <article class="post page">
 <h2 class="ptitle">Convocatoria a la Asamblea</h2>
-<div class="share"><button type="button" data-link="convocatoria">Copiar enlace</button></div>
+
 <div class="pbody doc"><h3 id="con-convocatoria" class="center">CONVOCATORIA</h3>
 <p>Hoy, veintiocho (28) de octubre de 2026, se convoca con carácter de urgencia a todos los TRABAJADORES Y TRABAJADORAS DE JERÓNIMO MARTINS COLOMBIA S.A.S. (TIENDAS ARA) A UNA ASAMBLEA.</p>
 <p><strong>Punto a tratar:</strong> Constitución de un Sindicato de Empresa, según el artículo 356 literal "a" del Código Sustantivo del Trabajo.</p>
@@ -189,12 +186,12 @@ table.wide{min-width:760px}
 </article></section><section class="view" id="asistentes" data-view hidden data-title="Asistentes a la Asamblea">
 <article class="post page">
 <h2 class="ptitle">Asistentes a la Asamblea</h2>
-<div class="share"><button type="button" data-link="asistentes">Copiar enlace</button></div>
+
 <div class="pbody doc"><p class="center"><strong>SINDICATO DE TRABAJADORES DE ARA (SINTRARA)</strong></p><p class="small">NÓMINA DE MIEMBROS FUNDADORES Y FUNDADORAS QUE ASISTIERON A LA ASAMBLEA CONSTITUTIVA DONDE SE EXPUSO A CONSIDERACIÓN DE LOS PRESENTES EL PROYECTO DE SINDICATO DE TRABAJADORES DE ARA (SINTRARA), QUEDANDO APROBADO POR TODOS LOS ASISTENTES EN LA ASAMBLEA. HORA: 6:00 P.M. LUGAR: CL. 36 #336, CARTAGENA DE INDIAS. FECHA: 04/11/2026. TODOS SOMOS TRABAJADORES DE JERÓNIMO MARTINS COLOMBIA S.A.S. (TIENDAS ARA). SE LEYÓ EL ACTA Y EN CONFORMIDAD FIRMAMOS (ARTS. 359 Y 361 DEL CÓDIGO SUSTANTIVO DEL TRABAJO).</p><div class="scroll"><table class="wide"><thead><tr><th>No.</th><th>Nombres y apellidos</th><th>Cédula</th><th>Nacionalidad</th><th>Profesión u oficio</th><th>Edad</th><th>Domicilio</th><th>Firma</th></tr></thead><tbody><tr><td>1</td><td>Federico Reyes Estrada</td><td></td><td>Colombiana</td><td>Operario</td><td></td><td></td><td></td></tr><tr><td>2</td><td>Elsa Bayter</td><td></td><td>Colombiana</td><td>Aux. punto de venta</td><td></td><td></td><td></td></tr><tr><td>3</td><td>Faustina Ruiz</td><td></td><td>Colombiana</td><td>Cajera</td><td></td><td></td><td></td></tr><tr><td>4</td><td>Miguel Bustillo</td><td></td><td>Colombiana</td><td>Operador logístico</td><td></td><td></td><td></td></tr><tr><td>5</td><td>Janeth Bautista</td><td></td><td>Colombiana</td><td>Chef</td><td></td><td></td><td></td></tr><tr><td>6</td><td>Yarleydis Díaz</td><td></td><td>Colombiana</td><td>Cajera</td><td></td><td></td><td></td></tr><tr><td>7</td><td>Isaac Lorduy</td><td></td><td>Colombiana</td><td>Cajero</td><td></td><td></td><td></td></tr><tr><td>8</td><td>Mónica Bayter</td><td></td><td>Colombiana</td><td>Jefa de tienda</td><td></td><td></td><td></td></tr><tr><td>9</td><td>María Bayter</td><td></td><td>Colombiana</td><td>Aux. punto de venta</td><td></td><td></td><td></td></tr><tr><td>10</td><td>Nereidis Flórez</td><td></td><td>Colombiana</td><td>Jefa de tienda</td><td></td><td></td><td></td></tr><tr><td>11</td><td>Wilman Rodríguez M.</td><td></td><td>Colombiana</td><td>Líder operativo</td><td></td><td></td><td></td></tr><tr><td>12</td><td>María Marrugo</td><td></td><td>Colombiana</td><td>Supervisora junior</td><td></td><td></td><td></td></tr><tr><td>13</td><td>Alejandra González</td><td></td><td>Colombiana</td><td>Aux. de tienda</td><td></td><td></td><td></td></tr><tr><td>14</td><td>Elsa Marrugo</td><td></td><td>Colombiana</td><td>Operadora de montacargas</td><td></td><td></td><td></td></tr><tr><td>15</td><td>Amaury Maza</td><td></td><td>Colombiana</td><td>Aux. de central</td><td></td><td></td><td></td></tr><tr><td>16</td><td>Natalia Rojas</td><td></td><td>Colombiana</td><td>Auxiliar</td><td></td><td></td><td></td></tr><tr><td>17</td><td>Yaneris Díaz</td><td></td><td>Colombiana</td><td>Cajera</td><td></td><td></td><td></td></tr><tr><td>18</td><td>Manuel Bustillo</td><td></td><td>Colombiana</td><td>Empleado</td><td></td><td></td><td></td></tr><tr><td>19</td><td>Roberto Lagares</td><td></td><td>Colombiana</td><td>Cajero</td><td></td><td></td><td></td></tr><tr><td>20</td><td>Laura Vitola</td><td></td><td>Colombiana</td><td>Cajera</td><td></td><td></td><td></td></tr><tr><td>21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>22</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>24</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>26</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>27</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div><hr class="page"><h3 class="center">Parte trasera de la nómina</h3><div class="sigs"><p class="center"><strong>P/ SINDICATO DE TRABAJADORES DE ARA (SINTRARA)</strong><br><strong>POR LA JUNTA DIRECTIVA ELECTA PROVISIONAL</strong></p><div class="sigrow one"><div class="sig"><span class="line"></span><span>Wilman Rodríguez M.</span><span>C.C. <span class="fill" style="--w:14ch"></span></span><b>SECRETARIO GENERAL</b></div></div><div class="sigrow"><div class="sig"><span class="line"></span><span>María Marrugo</span><span>C.C. <span class="fill" style="--w:14ch"></span></span><b>SEC. DE ORGANIZACIÓN</b></div><div class="sig"><span class="line"></span><span>Nereidis Flórez</span><span>C.C. <span class="fill" style="--w:14ch"></span></span><b>SEC. DE FINANZAS</b></div></div><div class="sigrow"><div class="sig"><span class="line"></span><span>Miguel Bustillo</span><span>C.C. <span class="fill" style="--w:14ch"></span></span><b>SEC. DE RECLAMOS</b></div><div class="sig"><span class="line"></span><span>Yaneris Díaz</span><span>C.C. <span class="fill" style="--w:14ch"></span></span><b>SEC. DE ACTAS Y CORR.</b></div></div><div class="sigrow"><div class="sig"><span class="line"></span><span>Natalia Rojas</span><span>C.C. <span class="fill" style="--w:14ch"></span></span><b>SEC. FORM. Y DOCT.</b></div><div class="sig"><span class="line"></span><span>Laura Vitola</span><span>C.C. <span class="fill" style="--w:14ch"></span></span><b>SEC. CULT. Y DEP.</b></div></div><div class="sigrow"><div class="sig"><span class="line"></span><span>Amaury Maza</span><span>C.C. <span class="fill" style="--w:14ch"></span></span><b>VOCAL 1 (FISCAL)</b></div><div class="sig"><span class="line"></span><span>Alejandra González</span><span>C.C. <span class="fill" style="--w:14ch"></span></span><b>VOCAL 2</b></div></div></div></div>
 </article></section><section class="view" id="acta-constitutiva" data-view hidden data-title="Acta Constitutiva">
 <article class="post page">
 <h2 class="ptitle">Acta Constitutiva</h2>
-<div class="share"><button type="button" data-link="acta-constitutiva">Copiar enlace</button></div>
+
 <div class="pbody doc"><p class="center"><strong>SINDICATO DE TRABAJADORES DE ARA (SINTRARA)</strong></p>
 <h3 id="act-acta-constitutiva" class="center">ACTA CONSTITUTIVA</h3>
 <p>En Cartagena de Indias, a los cuatro (4) días del mes de noviembre de 2026 (04/11/2026), siendo las seis (6) de la tarde (6:00 p.m.), reunidos en la Cl. 36 #336, de esta ciudad, previa convocatoria girada a tal efecto por los integrantes del Comité Organizador Wilman Rodríguez M., María Marrugo y Nereidis Flórez, presentes los ciudadanos y ciudadanas:</p>
@@ -205,7 +202,7 @@ table.wide{min-width:760px}
 </article></section><section class="view" id="estatutos" data-view hidden data-title="Estatutos Sociales">
 <article class="post page">
 <h2 class="ptitle">Estatutos Sociales</h2>
-<div class="share"><button type="button" data-link="estatutos">Copiar enlace</button></div>
+
 <div class="pbody doc"><p class="center"><strong>SINDICATO DE TRABAJADORES DE ARA (SINTRARA)</strong></p>
 <h3 id="est-capitulo-primero-de-la-constitucion-" class="chapter">CAPITULO PRIMERO · DE LA CONSTITUCIÓN, DENOMINACIÓN, DOMICILIO, OBJETO Y ÁMBITO</h3>
 <p><strong>Artículo 1.- CONSTITUCIÓN:</strong> La Organización Sindical estará constituida por todos aquellos trabajadores y trabajadoras con capacidad legal que deseen formar parte de la misma. Se constituye el <strong>SINDICATO DE TRABAJADORES DE ARA (SINTRARA)</strong> como sindicato de empresa, de conformidad con lo establecido en el artículo 39 de la Constitución Política de Colombia, los Convenios 87 y 98 de la Organización Internacional del Trabajo, aprobados por las Leyes 26 y 27 de 1976, y los artículos 353, 356 literal a), 359 y 361 del Código Sustantivo del Trabajo (en lo sucesivo CST).</p>
@@ -549,7 +546,7 @@ table.wide{min-width:760px}
 </article></section><section class="view" id="junta-directiva" data-view hidden data-title="Junta Directiva Provisional">
 <article class="post page">
 <h2 class="ptitle">Junta Directiva Provisional</h2>
-<div class="share"><button type="button" data-link="junta-directiva">Copiar enlace</button></div>
+
 <div class="pbody doc"><h3 id="jun-junta-directiva-provisional" class="center">JUNTA DIRECTIVA PROVISIONAL</h3>
 <div class="scroll"><table><thead><tr><th>Cargos por secretaría</th><th>Nombres y apellidos</th><th>Nº C.C.</th></tr></thead><tbody><tr><td>Secretario General</td><td>Wilman Rodríguez M.</td><td></td></tr><tr><td>Secretario de Organización</td><td>María Marrugo</td><td></td></tr><tr><td>Secretario de Finanzas</td><td>Nereidis Flórez</td><td></td></tr><tr><td>Secretario de Reclamos</td><td>Miguel Bustillo</td><td></td></tr><tr><td>Secretario de Actas y Correspondencia</td><td>Yaneris Díaz</td><td></td></tr><tr><td>Secretario de Formación y Doctrina</td><td>Natalia Rojas</td><td></td></tr><tr><td>Secretario de Cultura y Deportes</td><td>Laura Vitola</td><td></td></tr><tr><td>Primer Vocal (funciones de fiscal)</td><td>Amaury Maza</td><td></td></tr><tr><td>Segundo Vocal</td><td>Alejandra González</td><td></td></tr></tbody></table></div>
 <h3 id="jun-tribunal-disciplinario" class="center">TRIBUNAL DISCIPLINARIO</h3>
@@ -569,7 +566,6 @@ table.wide{min-width:760px}
 <footer>SINTRARA · Sindicato de Trabajadores de Ara · Cl. 36 #336 · Cartagena de Indias, Bolívar<br>Organización sindical independiente; este no es un sitio de la empresa.</footer>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <button class="totop" id="totop" type="button" aria-label="Volver arriba">↑</button>
-<div class="toast" id="toast" role="status">Enlace copiado</div>
 <script>
 {
 const views=[...document.querySelectorAll('[data-view]')];
@@ -593,13 +589,6 @@ const bar=document.getElementById('progress'),top=document.getElementById('totop
 const onScroll=()=>{const h=document.documentElement;const m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?h.scrollTop/m*100:0)+'%';top.classList.toggle('on',h.scrollTop>500)};
 addEventListener('scroll',onScroll,{passive:true});addEventListener('hashchange',onScroll);onScroll();
 top.addEventListener('click',()=>window.scrollTo({top:0,behavior:still?'auto':'smooth'}));
-const toast=document.getElementById('toast');
-document.addEventListener('click',async e=>{
-  const b=e.target.closest('[data-link]');if(!b)return;
-  const url=location.href.split('#')[0]+'#'+b.dataset.link;
-  try{await navigator.clipboard.writeText(url);toast.textContent='Enlace copiado'}catch(err){toast.textContent=url}
-  toast.classList.add('on');setTimeout(()=>toast.classList.remove('on'),2200);
-});
 document.addEventListener('click',e=>{document.querySelectorAll('nav.menu details[open]').forEach(d=>{if(!d.contains(e.target))d.open=false})});
 }
 </script>
